@@ -1,6 +1,11 @@
-﻿
-taskkill /f /im:LINQPad.exe
-xcopy /i/y *.* "%programdata%\LINQPad\Drivers\DataContext\4.0\JsonDataContextDriver (ed22602f98bb09d6)\"
-powershell start-process "C:\Users\rdavis\Dropbox\code\LINQPad4\LINQPad.exe"
-rem powershell start-process "C:\Users\rdavis\Desktop\LINQPad4\LINQPad.exe"
+@echo off
+
+set version=0.0.4.1
+set zip="%ProgramFiles%\7-Zip\7z.exe"
+set output="JsonDataContextDriver.v%version%.lpx"
+
+%zip% a -tzip "%output%" header.xml *.dll
+
+echo Package %output% created.
+
 exit 0

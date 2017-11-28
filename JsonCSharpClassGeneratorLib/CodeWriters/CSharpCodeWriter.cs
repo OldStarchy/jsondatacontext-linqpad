@@ -203,7 +203,7 @@ namespace Xamasoft.JsonClassGenerator.CodeWriters
 
                 if (true || config.UsePascalCase)
                 {
-                    sw.WriteLine(prefix + "[JsonProperty(\"{0}\")]", field.JsonMemberName);
+                    sw.WriteLine(prefix + "[JsonProperty(\"{0}\")]", field.JsonMemberName.Replace("\\", "\\\\"));
                 }
 
                 if (config.UseProperties)

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Xamasoft.JsonClassGenerator
 {
@@ -15,7 +16,7 @@ namespace Xamasoft.JsonClassGenerator
         {
             this.generator = generator;
             this.JsonMemberName = jsonMemberName;
-            this.MemberName = jsonMemberName;
+            this.MemberName = Regex.Replace(jsonMemberName, "[^\\w]", "");
             if (usePascalCase) MemberName = JsonClassGenerator.ToTitleCase(MemberName);
             this.Type = type;
             this.Examples = Examples;

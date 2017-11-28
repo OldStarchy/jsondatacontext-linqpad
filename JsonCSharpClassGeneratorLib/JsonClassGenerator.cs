@@ -264,6 +264,7 @@ namespace Xamasoft.JsonClassGenerator
         private string CreateUniqueClassName(string name)
         {
             name = ToTitleCase(name);
+            name = name.Replace("\\", "");
 
             var finalName = name;
             var i = 2;
